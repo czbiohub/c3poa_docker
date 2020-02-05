@@ -23,6 +23,7 @@ docker run \
 -d \
 c3poa
 ```
+Use docker CLI to retreive `<container_id>`: `docker ps`
 
 ### Script execution
 ```
