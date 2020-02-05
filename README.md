@@ -8,7 +8,7 @@ The docker container runs c3poa (https://github.com/rvolden/C3POa).
 ### Create detached container
 ```
 docker run \
--v <source_path>:<container_path> \
+-v <source_path>:<container_path> \    # set equivalent paths for ease 
 -u $(id -u):$(id -g) \   # set user and group for IO permissions
 -t \
 -d \
@@ -17,7 +17,7 @@ c3poa
 example
 ```
 docker run \
--v /mnt/vol1/user1:/mnt/vol1/user1 \   # set equivalent path for ease 
+-v /mnt/vol1/user1:/mnt/vol1/user1 \   
 -u $(id -u):$(id -g) \
 -t \
 -d \
