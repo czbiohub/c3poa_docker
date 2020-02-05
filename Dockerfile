@@ -73,8 +73,6 @@ RUN mkdir blat && \
 ENV PATH $PATH:/blat/blat
     
 # add scripts
-ADD blank.txt ./
-ADD test.py ./
 ADD C3POa_preprocessing.py ./
 ADD C3POa.py ./
 ADD C3POa_postprocessing.py ./
