@@ -17,7 +17,7 @@ c3poa
 example
 ```
 docker run \
--v /mnt/vol1/user1:/mnt/vol1/user1 \
+-v /mnt/vol1/user1:/mnt/vol1/user1 \   # set equivalent path for ease 
 -u $(id -u):$(id -g) \
 -t \
 -d \
