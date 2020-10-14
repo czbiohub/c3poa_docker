@@ -36,28 +36,28 @@ RUN git clone --recursive https://github.com/isovic/racon.git racon && \
     cmake -DCMAKE_BUILD_TYPE=Release .. && \
     make && \
     cd
-ENV PATH $PATH:/racon/build/bin/racon
+ENV PATH $PATH:/racon/build/bin
 
 # poaV2 build
 RUN git clone https://github.com/tanghaibao/bio-pipeline.git && \
     cd bio-pipeline/poaV2 && \
     make poa && \
     cd
-ENV PATH $PATH:/bio-pipeline/poaV2/poa
+ENV PATH $PATH:/bio-pipeline/poaV2
     
 # minimap2 build
 RUN git clone https://github.com/lh3/minimap2 --branch v2.7 && \
     cd minimap2 && \
     make && \
     cd
-ENV PATH $PATH:/minimap2/minimap2
+ENV PATH $PATH:/minimap2
     
 # gonk build
 RUN git clone https://github.com/rvolden/gonk && \
     cd gonk && \
     make && \
     cd
-ENV PATH $PATH:/gonk/gonk
+ENV PATH $PATH:/gonk
     
 # golang build
 RUN wget https://dl.google.com/go/go1.13.6.linux-amd64.tar.gz && \
@@ -70,11 +70,11 @@ RUN mkdir blat && \
     cd blat &&\
     wget http://hgdownload.soe.ucsc.edu/admin/exe/linux.x86_64/blat/blat && \
     chmod 755 ./blat
-ENV PATH $PATH:/blat/blat
+ENV PATH $PATH:/blat
     
 # add scripts
 ADD C3POa_preprocessing.py ./
 ADD C3POa.py ./
 ADD C3POa_postprocessing.py ./
 ADD consensus.py ./
-ENV PATH $PATH:consensus.py
+
