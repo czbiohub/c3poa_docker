@@ -52,18 +52,18 @@ RUN git clone https://github.com/lh3/minimap2 --branch v2.7 && \
     cd
 ENV PATH $PATH:/minimap2
     
+# golang build
+RUN wget https://dl.google.com/go/go1.13.6.linux-amd64.tar.gz && \
+    tar -xvf go1.13.6.linux-amd64.tar.gz && \
+    mv go /usr/local
+ENV PATH $PATH:/usr/local/go/bin
+
 # gonk build
 RUN git clone https://github.com/rvolden/gonk && \
     cd gonk && \
     make && \
     cd
 ENV PATH $PATH:/gonk
-    
-# golang build
-RUN wget https://dl.google.com/go/go1.13.6.linux-amd64.tar.gz && \
-    tar -xvf go1.13.6.linux-amd64.tar.gz && \
-    mv go /usr/local
-ENV PATH $PATH:/usr/local/go/bin
 
 # blat build 
 RUN mkdir blat && \
